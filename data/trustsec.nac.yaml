@@ -1,0 +1,24 @@
+---
+ise:
+  trust_sec:
+    security_groups:
+      - name: CorpWorkstations
+        description: Corporate Workstations
+        value: 97
+      - name: CorpMobiles
+        description: Corporate Mobiles
+        value: 98
+      - name: CorpGuests
+        description: Guest devices
+        value: 99
+    security_group_acls:
+      - name: Permit_ICMP
+        description: Permit ICMP traffic
+        acl_content: permit icmp any any
+    matrix_entries:
+      - source_sgt: CorpWorkstations
+        destination_sgt: CorpMobiles
+        sgacl_name: Permit_ICMP
+      - source_sgt: CorpGuests
+        destination_sgt: CorpWorkstations
+        sgacl_name: Deny IP
