@@ -21,5 +21,5 @@ pip3 install .
 After installing, you can run the tool directly from the command line:
 
 ```bash
-nac-tool import-matrix --help
+nac-ise import-matrix --help
 ```
