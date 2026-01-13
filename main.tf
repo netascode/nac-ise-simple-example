@@ -14,7 +14,8 @@ provider "ise" {
 }
 
 module "ise" {
-  source = "git::https://github.com/netascode/terraform-ise-nac-ise.git?ref=dev"
+  source  = "netascode/nac-ise/ise"
+  version = "0.2.2"
 
   yaml_directories = ["data/"]
 }
